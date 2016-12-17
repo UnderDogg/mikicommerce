@@ -17,22 +17,21 @@ class CreateOrderTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('customer_id')->unsigned();
-            $table->integer('shipping_id')->nullable();
+            $table->boolean('status');
+            /*$table->integer('shipping_id')->nullable();
             $table->integer('download_link_id')->nullable();
             $table->integer('no_of_product');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->string('telephone');
-            $table->float('total_price');
-            $table->boolean('status');
-            $table->longText('custom_fields')->nullable();
+            $table->float('total_price');*/
+
+            //$table->longText('custom_fields')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('product_id')->references('id')
                 ->on('products')
                 ->onDelete('cascade');

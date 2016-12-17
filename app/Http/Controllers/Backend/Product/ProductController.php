@@ -93,6 +93,8 @@ class ProductController extends CommandsDomainEventController
         //}
 
         $product = $this->product->eagerLoadPaginated(10);
+
+        //dd($product);
         //Cache::tags('productAdmin')->put('productAdmin',$product , 43200);
 
         return view('backend.Product.index')->withProducts($product);

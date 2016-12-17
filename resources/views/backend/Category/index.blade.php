@@ -19,9 +19,11 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="alert alert-info">
-                <i class="fa fa-info-circle"></i> Here are the list of Categorys and sub category.<br />
+                <i class="fa fa-info-circle"></i> Here is the list of Categorys and sub category.<br />
                 <a href="{{route('admin.category.create')}}"><i class="fa fa-plus"> </i> {{ trans('category.add_new_category') }}</a>
             </div><!--alert info-->
+
+
 
             <div class="dd permission-hierarchy">
                 <ol class="dd-list">
@@ -30,28 +32,37 @@
                             @foreach($categorys as $category)
 
                                 @if($category->parent_id == NULL)
+                                    {{--
                                     @foreach ($category->category_description->category_description_translations as $trans)
 
                                     <div class="dd-handle"><a href="{{route('admin.category.show',$category->id)}}"> {!! $trans->name !!} </a>
                                         <span class="pull-right">{!! $category->getDeleteButtonAttribute()  !!}</span></div>
-                                    @endforeach
+                                    @endforeach --}}
                                     <ol class="dd-list">
                                         @foreach($categorys as $category_h)
                                           @if($category_h->parent_id == $category->id)
-                                                @foreach ($category_h->category_description->category_description_translations as $trans)
+
+
+                                                <li class="dd-item" data-id="{!! $category->id !!}">
+                                                    <div class="dd-handle"><a href="{{route('admin.category.show',$category_h->id)}}">{!! $category->name !!} </a>
+                                                        <span class="pull-right">{!! $category_h->getDeleteButtonAttribute()  !!}  <a href="{{route('admin.category.destroy',$category_h->id)}}">  </a> </span></div>
+                                                </li>
+
+
+                                                {{--@foreach ($category_h->category_description->category_description_translations as $trans)
 
                                                     <li class="dd-item" data-id="{!! $category->id !!}">
                                                         <div class="dd-handle"><a href="{{route('admin.category.show',$category_h->id)}}">{!! $trans->name !!} </a>
                                                             <span class="pull-right">{!! $category_h->getDeleteButtonAttribute()  !!}  <a href="{{route('admin.category.destroy',$category_h->id)}}">  </a> </span></div>
                                                     </li>
-                                                @endforeach
+                                                @endforeach --}}
 
-                                            @endif
+                                          @endif
                                         @endforeach
                                     </ol>
 
-                                 @endif
-                                    @endforeach
+                                @endif
+                            @endforeach
                         @else
 
                     @endif

@@ -25,14 +25,12 @@ class CreateCustomerDetailTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            /*
-             * Add Foreign/Unique/Index
 
-            $table->foreign('user_id')->references('id')
+
+            /*$table->foreign('user_id')->references('id')
                 ->on('users')
-                ->onDelete('cascade');
+                ->onDelete('cascade');*/
 
-             * */
         });
     }
 

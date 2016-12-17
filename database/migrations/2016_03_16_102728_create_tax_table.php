@@ -13,17 +13,15 @@ class CreateTaxTable extends Migration
     public function up()
     {
         //
-        Schema::create('tax', function (Blueprint $table) {
+        /*Schema::create('tax', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->integer('rate');
             $table->timestamps();
 
 
-            /*
-             * Add Foreign/Unique/Index
-             */
-        });
+            
+        });*/
     }
 
     /**
@@ -34,6 +32,6 @@ class CreateTaxTable extends Migration
     public function down()
     {
         //
-        Schema::drop('tax');
+        //Schema::drop('tax');
     }
 }

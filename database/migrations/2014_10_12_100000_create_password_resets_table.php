@@ -17,9 +17,7 @@ class CreatePasswordResetsTable extends Migration
             $table->string('token');
             $table->timestamp('created_at');
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->index('email');
             $table->index('token');
         });

@@ -13,21 +13,20 @@ class CreateProductAttributeTable extends Migration
     public function up()
     {
         //
-        Schema::create('product_attribute', function (Blueprint $table) {
+        /*Schema::create('product_attribute', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('product_category_id')->unsigned();
             $table->string('title');
+            $table->string('attribute_set_name');
             $table->boolean('notnull')->default(true);
             $table->string('datatype');
-            $table->timestamps();
+            $table->timestamps();*/
 
-            /*
-             * Add Foreign/Unique/Index
-             */
-            $table->foreign('product_category_id')->references('id')
+            /*$table->foreign('product_category_id')->references('id')
                 ->on('product_attribute_category')
-                ->onDelete('cascade');
+                ->onDelete('cascade');* /
         });
+            */
     }
 
     /**
@@ -38,6 +37,6 @@ class CreateProductAttributeTable extends Migration
     public function down()
     {
         //
-        Schema::drop('product_attribute');
+        //Schema::drop('product_attribute');
     }
 }

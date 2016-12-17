@@ -20,9 +20,7 @@ class CreateUserProvidersTable extends Migration
             $table->string('avatar')->nullable();
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('user_id')->references('id')
                 ->on('users')
                 ->onDelete('cascade');

@@ -13,20 +13,18 @@ class CreateDownloadTable extends Migration
     public function up()
     {
         //
-        Schema::create('download', function (Blueprint $table) {
+        /*Schema::create('download', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->string('filename');
             $table->string('mask');
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('product_id')->references('id')
                 ->on('products')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -37,6 +35,6 @@ class CreateDownloadTable extends Migration
     public function down()
     {
         //
-        Schema::drop('download');
+        //Schema::drop('download');
     }
 }

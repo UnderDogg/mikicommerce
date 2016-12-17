@@ -13,7 +13,7 @@ class CreateCheckOutAgreementTable extends Migration
     public function up()
     {
         //
-        Schema::create('check_out_agreement', function (Blueprint $table) {
+        /*Schema::create('check_out_agreement', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->longText('content');
@@ -24,9 +24,9 @@ class CreateCheckOutAgreementTable extends Migration
 
             /*
              * Add Foreign/Unique/Index
-             */
+             *  /
             $table->unique('name');
-        });
+        });*/
     }
 
     /**
@@ -39,10 +39,10 @@ class CreateCheckOutAgreementTable extends Migration
         /*
          * Remove Foreign/Unique/Index
          */
-        Schema::table('check_out_agreement', function (Blueprint $table) {
+        /*Schema::table('check_out_agreement', function (Blueprint $table) {
             $table->dropUnique('check_out_agreement_name_unique');
         });
 
-        Schema::drop('check_out_agreement');
+        Schema::drop('check_out_agreement');*/
     }
 }

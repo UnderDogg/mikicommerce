@@ -14,15 +14,13 @@ class CreateProductAttributeCategoryTable extends Migration
     public function up()
     {
         //
-        Schema::create('product_attribute_category', function (Blueprint $table) {
+        /*Schema::create('product_attribute_category', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('attribute_set_name');
+
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
-        });
+            
+        });*/
     }
 
     /**
@@ -33,6 +31,6 @@ class CreateProductAttributeCategoryTable extends Migration
     public function down()
     {
         //
-        Schema::drop('product_attribute_category');
+        //Schema::drop('product_attribute_category');
     }
 }

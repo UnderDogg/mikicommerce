@@ -50,8 +50,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        //$this->category->eagerLoad('category_description', 9)
+        //getCategoryPaginated
+        //$per_page, $order_by = 'id', $sort = 'asc'
         return view('backend.Category.index')
-            ->withCategorys($this->category->eagerLoad('category_description', 9));
+            ->withCategorys($this->category->getCategoryPaginated(9));
     }
 
     /**

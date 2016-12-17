@@ -14,7 +14,7 @@ class CreateBankTransferInfoTable extends Migration
     {
         //
 
-        Schema::create('bank_transfer_info', function (Blueprint $table) {
+        /*Schema::create('bank_transfer_info', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('bank_name');
             $table->string('bank_account_no');
@@ -25,8 +25,8 @@ class CreateBankTransferInfoTable extends Migration
 
             /*
              * Add Foreign/Unique/Index
-             */
-        });
+             *  /
+        });*/
     }
 
     /**
@@ -37,6 +37,6 @@ class CreateBankTransferInfoTable extends Migration
     public function down()
     {
         //
-        Schema::drop('bank_transfer_info');
+        //Schema::drop('bank_transfer_info');
     }
 }

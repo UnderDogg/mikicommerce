@@ -16,7 +16,7 @@ class CheckOutCheck
     /**
      * @var array
      */
-    protected $languages = ['en', 'am'];
+    protected $languages = ['en'];
 
     /**
      * Handle an incoming request.

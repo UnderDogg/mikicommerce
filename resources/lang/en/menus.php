@@ -59,8 +59,6 @@ return [
         'language' => 'Language',
         'langs'    => [
             'en' => 'English',
-            'am' => 'Amharic',
-
         ],
     ],
 ];

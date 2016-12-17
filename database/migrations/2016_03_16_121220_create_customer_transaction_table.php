@@ -22,9 +22,7 @@ class CreateCustomerTransactionTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('customer_id')->references('id')
                 ->on('customer_detail')
                 ->onDelete('cascade');

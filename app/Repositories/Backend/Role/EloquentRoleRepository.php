@@ -20,6 +20,7 @@ class EloquentRoleRepository implements RoleRepositoryContract
      */
     public function findOrThrowException($id, $withPermissions = false)
     {
+
         if (!is_null(Role::find($id))) {
             if ($withPermissions) {
                 return Role::with('permissions')->find($id);

@@ -11,13 +11,13 @@ class AddAttributeIdForProduct extends Migration
      */
     public function up()
     {
-        Schema::table('products', function ($table) {
+        /*Schema::table('products', function ($table) {
             $table->integer('attribute_category_id')->unsigned();
 
             $table->foreign('attribute_category_id')->references('id')
                 ->on('product_attribute_category')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     /**

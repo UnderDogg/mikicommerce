@@ -35,9 +35,7 @@ class SetupAccessTables extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('role_id')->unsigned();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('user_id')
                 ->references('id')
                 ->on(config('access.users_table'))
@@ -58,9 +56,7 @@ class SetupAccessTables extends Migration
             $table->smallInteger('sort')->default(0)->unsigned();
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->unique('name');
         });
 
@@ -77,9 +73,7 @@ class SetupAccessTables extends Migration
             $table->integer('permission_id')->unsigned();
             $table->integer('role_id')->unsigned();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('permission_id')
                 ->references('id')
                 ->on(config('access.permissions_table'))
@@ -97,9 +91,7 @@ class SetupAccessTables extends Migration
             $table->integer('dependency_id')->unsigned();
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('permission_id')
                 ->references('id')
                 ->on(config('access.permissions_table'))
@@ -116,9 +108,7 @@ class SetupAccessTables extends Migration
             $table->integer('permission_id')->unsigned();
             $table->integer('user_id')->unsigned();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('permission_id')
                 ->references('id')
                 ->on(config('access.permissions_table'))

@@ -164,7 +164,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            {!! $roles->findOrThrowException(1)->name !!}<br/>
+                                            {!! $roles->findOrThrowException(99)->name !!}<br/>
                                             @if (count($permission->roles))
                                                 @foreach($permission->roles as $role)
                                                     {!! $role->name !!}<br/>

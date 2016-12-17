@@ -43,15 +43,15 @@ return [
         'setting'                      => 'E-commerce Settings ',
         'bank_info'                    => 'Bank Transfer Info',
         'check_out_agreement'          => 'Check out Agreement',
-        'order'                        => 'Order\'s',
+        'order'                        => 'Orders',
         'stock'                        => 'Stock',
 
 
     ],
     'static_page' => [
         'bank_info_management'   => 'Bank Transfer Information',
-        'active_bank_info'       => 'Active Bank Transfer information\'s',
-        'deleted_bank_info'      => 'Deleted Bank Transfer information\'s',
+        'active_bank_info'       => 'Active Bank Transfer informations',
+        'deleted_bank_info'      => 'Deleted Bank Transfer informations',
         'bankinfo_id'            => 'Bank Info ID',
         'bankinfo_name'          => 'Bank name',
         'bankinfo_account_no'    => 'Bank Account No',

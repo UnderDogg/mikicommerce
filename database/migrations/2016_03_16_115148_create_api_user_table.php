@@ -13,7 +13,7 @@ class CreateApiUserTable extends Migration
     public function up()
     {
         //
-        Schema::create('api_user', function (Blueprint $table) {
+        /*Schema::create('api_user', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('api_name');
@@ -22,13 +22,11 @@ class CreateApiUserTable extends Migration
             $table->boolean('isactive');
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('user_id')->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -39,6 +37,6 @@ class CreateApiUserTable extends Migration
     public function down()
     {
         //
-        Schema::drop('api_user');
+        //Schema::drop('api_user');
     }
 }

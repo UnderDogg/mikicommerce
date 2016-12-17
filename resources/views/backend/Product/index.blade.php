@@ -22,10 +22,9 @@
                     <tr>
                         <th>{{ trans('product.product_id') }}</th>
                         <th>{{ trans('product.product_name') }}</th>
-                        <th>{{ trans('product.product_price') }}</th>
+
                         <th class="visible-lg">{{ trans('product.product_sku') }}</th>
-                        <th class="visible-lg">{{ trans('product.product_type') }}</th>
-                        <th>{{ trans('eav.eav_attribute_category_name') }}</th>
+
                         <th>{{ trans('category.category_name') }}</th>
                         <th>{{ trans('crud.actions') }}</th>
                     </tr>
@@ -36,17 +35,11 @@
                             <tr>
                                 <td>{!! $product->id !!}</td>
                                 <td>{!! $product->name !!}</td>
-                                <td>{!! $product->price !!} {!! $product->currency !!} ( {!! googleCurrency($product->currency,'USD',$product->price) !!} ) </td>
+
                                 <td class="visible-lg">{!! $product->sku !!}</td>
-                                <td class="visible-lg">
-                                       @if($product->is_downloadable)
-                                        {{ trans('product.product_downloadable') }}
-                                           @else
-                                        {{ trans('product.product_non_downloadable') }}
-                                @endif
-                                </td>
-                                <td>{!! $product->product_attribute_category->attribute_set_name !!}</td>
-                                <td>{!! $product->category->category_description->name !!}</td>
+
+
+                                <td>{!! $product->category->name !!}</td>
                                 <td>{!! $product->getActionButtonsAttribute() !!}</td>
                             </tr>
                         @endforeach

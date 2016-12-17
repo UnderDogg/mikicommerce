@@ -12,21 +12,17 @@ class CreateCategoryDescriptionTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_description_translations', function (Blueprint $table) {
+        /*Schema::create('category_description_translations', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('category_description_id')->unsigned();
             $table->string('locale');
-            $table->string('name');
-            $table->string('description');
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('category_description_id', 'c_d_t_foreign')->references('id')
                 ->on('category_description')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -37,6 +33,6 @@ class CreateCategoryDescriptionTranslationsTable extends Migration
     public function down()
     {
         //
-        Schema::drop('category_description_translations');
+        //Schema::drop('category_description_translations');
     }
 }

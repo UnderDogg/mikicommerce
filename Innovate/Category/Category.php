@@ -7,6 +7,7 @@
  * Time: 10:57 AM.
  */
 namespace Innovate\Category;
+//use Kalnoy\Nestedset\NodeTrait;
 
 use Innovate\BaseModel;
 use Innovate\Category\Traits\Attribute\CategoryAttribute;

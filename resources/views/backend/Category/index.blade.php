@@ -19,22 +19,44 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="alert alert-info">
-                <i class="fa fa-info-circle"></i> Here is the list of Categorys and sub category.<br />
+                <i class="fa fa-info-circle"></i> Here is the list of categories and subcategories.<br />
                 <a href="{{route('admin.category.create')}}"><i class="fa fa-plus"> </i> {{ trans('category.add_new_category') }}</a>
             </div><!--alert info-->
 
-
+<?php
+/*echo "<pre>";
+print_r($categories);
+echo "</pre>";*/
+?>
 
             <div class="dd permission-hierarchy">
                 <ol class="dd-list">
                     <li class="dd-item" data-id="">
                         @if ($categorys->count())
-                            @foreach($categorys as $category)
+                            @foreach($categories as $category)
 
                                 @if($category->parent_id == NULL)
                                     {{--
                                     @foreach ($category->category_description->category_description_translations as $trans)
-
+                                    @foreach ($categories as $category)
+                                    {{--@foreach ($category->children as $children)
+                                    <tr>
+                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->description }}</td>
+                                    <td>{{ $category->slug }}</td>
+                                    <td><a class="edit" href="{!! action('Admin\CategoriesController@edit', $category->id) !!}" title="Edit"><i class="fa fa-pencil-square-o"></a></i> <a class="delete" href="{!! action('Admin\CategoriesController@destroy', $category->id) !!}" title="Are you sure you want to delete?"><i class="fa fa-trash-o"></i></a></td>
+                                    @foreach ($category->children as $children)
+                                    <tr>
+                                    <td>{{ $children->name }}</td>
+                                    <td>{{ $children->description }}</td>
+                                    <td>{{ $children->slug }}</td>
+                                    <td></td>
+                                    </tr>
+                                    @endforeach
+                                    </tr>
+                                    </tbody>
+                                    {{--@endforeach
+                                    @endforeach--}}
                                     <div class="dd-handle"><a href="{{route('admin.category.show',$category->id)}}"> {!! $trans->name !!} </a>
                                         <span class="pull-right">{!! $category->getDeleteButtonAttribute()  !!}</span></div>
                                     @endforeach --}}
@@ -60,11 +82,9 @@
                                           @endif
                                         @endforeach
                                     </ol>
-
                                 @endif
                             @endforeach
                         @else
-
                     @endif
                     </li>
                 </ol>

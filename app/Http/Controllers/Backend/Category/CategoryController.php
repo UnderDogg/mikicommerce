@@ -54,7 +54,9 @@ class CategoryController extends Controller
         //getCategoryPaginated
         //$per_page, $order_by = 'id', $sort = 'asc'
         return view('backend.Category.index')
-            ->withCategorys($this->category->getCategoryPaginated(9));
+            //getAllCategory
+            //->withCategories($this->category->getCategoryPaginated(9));
+            ->withCategories($this->category->getAllCategory());
     }
 
     /**
